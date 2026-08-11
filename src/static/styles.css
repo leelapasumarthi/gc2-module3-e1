@@ -16,16 +16,47 @@ body {
 }
 
 header {
-  text-align: center;
-  padding: 20px 0;
+  padding: 20px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
 header h1 {
   margin-bottom: 10px;
+}
+
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.admin-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 220px;
+}
+
+.admin-panel input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.admin-status {
+  color: #e8f0fe;
+  font-size: 0.95rem;
 }
 
 main {
@@ -33,12 +64,6 @@ main {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-}
-
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 2fr 1fr;
-  }
 }
 
 section {
@@ -74,7 +99,6 @@ section h3 {
   margin-bottom: 8px;
 }
 
-/* New styles for participants section */
 .participants-container {
   margin-top: 15px;
   padding-top: 12px;
@@ -100,7 +124,6 @@ section h3 {
   justify-content: space-between;
 }
 
-/* Remove the bullet point pseudo-element */
 .participants-section ul li::before {
   display: none;
 }
@@ -111,42 +134,48 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
+  background-color: #c62828;
+  color: white;
   border: none;
-  color: #c62828;
   cursor: pointer;
   font-size: 14px;
-  padding: 2px 5px;
-  transition: all 0.2s;
+  padding: 4px 8px;
   border-radius: 3px;
 }
 
 .delete-btn:hover {
-  background-color: #ffebee;
+  background-color: #b71c1c;
 }
 
-.participants-section p {
-  color: #777;
+.teacher-hint {
+  margin-top: 12px;
+  color: #666;
   font-style: italic;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.admin-controls {
+  margin-top: 12px;
+  border-top: 1px dashed #ccc;
+  padding-top: 12px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.admin-controls h5 {
+  margin-bottom: 8px;
+  color: #1a237e;
 }
 
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
+.inline-register-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.student-email-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px;
 }
 
 button {
@@ -197,4 +226,19 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-panel {
+    align-items: stretch;
+  }
+
+  .inline-register-form {
+    flex-direction: column;
+  }
 }
